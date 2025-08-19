@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handsaeme Foie Gras: A Strategic Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- Application Structure Plan: A narrative, scrollable infographic that guides the user through the story of Handsaeme Foie Gras. It starts with an introduction to their traditional, vertically-integrated model ("The Artisanal Promise"). It then moves to an analysis of their product offerings and pricing strategy ("The Product Portfolio"). A new Gemini-powered recipe generator is added here. The core conflict is revealed in "The Ethical Crossroads," followed by the critical market event in "The Tipping Point." The analysis culminates in a visual SWOT breakdown ("Strategic Outlook") and concludes with actionable "Recommendations." This narrative flow was chosen to build a compelling story, making the complex business analysis engaging and easy to follow. -->
+    <!-- Visualization & Content Choices: 1. Vertical Integration: Goal: Organize. Method: Styled HTML/CSS flexbox flow. Justification: Clearly shows the farm-to-jar process without complex graphics. 2. Price Comparison: Goal: Compare. Method: Bar Chart (Chart.js/Canvas). Justification: Effectively visualizes the vast price-per-kg difference between premium foie gras and accessible pâtés, highlighting their market strategy. 3. Gemini Recipe Generator: Goal: Engage & Inspire. Method: Button-triggered API call to Gemini. Justification: Adds an interactive, value-added feature that directly connects the company's products to the end-user in a creative way. 4. Ethical Dilemma: Goal: Compare. Method: Side-by-side styled text cards. Justification: Directly contrasts the marketing claim with the owner's statement, creating a powerful reveal. 5. SWOT Analysis: Goal: Organize. Method: 2x2 colored grid (HTML/CSS). Justification: A classic, instantly recognizable format for strategic analysis. 6. Recommendations: Goal: Organize. Method: Styled list with Unicode icons. Justification: A clear, concise way to present the final strategic advice. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #073B4C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 450px;
+            max-height: 50vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #118AB2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black text-[#118AB2] uppercase tracking-wide">Handsaeme Foie Gras</h1>
+            <p class="mt-4 text-xl md:text-2xl font-semibold text-[#073B4C]">An Artisanal Producer at a Strategic Crossroads</p>
+        </header>
+
+        <section id="promise" class="mb-20">
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center text-[#118AB2] mb-8">The Artisanal Promise</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <p class="text-6xl font-black text-[#FFD166]">1990</p>
+                        <h3 class="text-xl font-bold mt-2">Founded in "Goose Meadow"</h3>
+                        <p class="mt-2 text-gray-600">Established in Kortemark, West Flanders, leveraging a deep, historical connection to goose husbandry.</p>
+                    </div>
+                    <div>
+                        <p class="text-6xl font-black text-[#FFD166]">100%</p>
+                        <h3 class="text-xl font-bold mt-2">Vertical Integration</h3>
+                        <p class="mt-2 text-gray-600">Controls the entire process from growing their own animal feed to on-site processing and packaging.</p>
+                    </div>
+                    <div>
+                        <p class="text-6xl font-black text-[#FFD166]">20+</p>
+                        <h3 class="text-xl font-bold mt-2">Direct-to-Consumer</h3>
+                        <p class="mt-2 text-gray-600">Focuses on an on-site farm shop and group tours to build a loyal, direct customer base.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="mb-20">
+             <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center text-[#118AB2] mb-2">The Product Portfolio</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Handsaeme balances high-value luxury items with accessible, everyday delicacies. This chart reveals the vast difference in price-per-kilogram, showcasing a strategy to capture both premium and entry-level markets.</p>
+                <div class="chart-container">
+                    <canvas id="priceComparisonChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini API Feature Section -->
+        <section id="recipe-generator" class="mb-20">
+            <div class="bg-white rounded-lg shadow-xl p-8 text-center">
+                <h2 class="text-3xl font-bold text-[#118AB2] mb-2">Genereer een Recept ✨</h2>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Klik op de knop om met de Gemini API een uniek recept te creëren op basis van de producten van Handsaeme. (Recept wordt in het Nederlands gegenereerd).</p>
+                <button id="generate-recipe-btn" class="bg-[#118AB2] text-white font-bold py-3 px-8 rounded-full hover:bg-[#073B4C] transition-colors duration-300 shadow-lg">
+                    Creëer een Recept
+                </button>
+                <div id="recipe-output" class="mt-8 text-left hidden">
+                    <div id="recipe-loader" class="loader hidden"></div>
+                    <div id="recipe-content" class="bg-gray-50 p-6 rounded-lg border">
+                        <!-- Recipe content will be injected here -->
+                    </div>
+                    <p id="recipe-error" class="text-red-500 mt-4 hidden"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dilemma" class="mb-20">
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center text-[#118AB2] mb-8">The Ethical Crossroads</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-[#06D6A0]/10 p-6 rounded-lg border-l-4 border-[#06D6A0]">
+                        <h3 class="text-2xl font-bold text-[#073B4C]">The Marketing Claim: "No Gavage"</h3>
+                        <p class="mt-4 text-lg text-gray-700">Retailers emphatically state that force-feeding is <span class="font-extrabold">NOT</span> applied. This positions the brand as a humane, guilt-free alternative for consumers troubled by conventional methods.</p>
+                    </div>
+                    <div class="bg-[#FF6B6B]/10 p-6 rounded-lg border-l-4 border-[#FF6B6B]">
+                        <h3 class="text-2xl font-bold text-[#073B4C]">The Owner's Reality</h3>
+                        <p class="mt-4 text-lg text-gray-700">The owner clarifies they use <span class="font-extrabold">"intensive fattening... with maize in a small space"</span> to achieve the same pathological liver enlargement, replacing one controversial method with another.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ban" class="mb-20">
+            <div class="bg-[#073B4C] text-white rounded-lg shadow-xl p-12 text-center">
+                <h2 class="text-3xl font-bold text-center text-white mb-4">The Tipping Point</h2>
+                <p class="text-8xl font-black text-[#FF6B6B] my-4">2023</p>
+                <p class="text-2xl md:text-3xl font-bold text-gray-200">Foie gras production is <span class="text-[#FF6B6B]">BANNED</span> in the Flemish Region of Belgium, regardless of the method used.</p>
+                <p class="mt-4 text-lg text-gray-300">This legal action presents an existential threat, invalidating the company's core product and unique selling proposition in its home market.</p>
+            </div>
+        </section>
+
+        <section id="swot" class="mb-20">
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center text-[#118AB2] mb-8">Strategic Outlook: SWOT Analysis</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-green-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-green-800">Strengths</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-green-900">
+                            <li>Strong brand identity & 30+ year heritage</li>
+                            <li>Full vertical integration (quality control)</li>
+                            <li>Unique "no gavage" selling proposition</li>
+                            <li>Loyal direct-to-consumer base</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-red-800">Weaknesses</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-red-900">
+                            <li>Minimal digital presence & no e-commerce</li>
+                            <li>Over-reliance on a single physical location</li>
+                            <li>Brand tied to a now-illegal product</li>
+                            <li>Cedes brand control to third-party retailers</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-800">Opportunities</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-blue-900">
+                            <li>Pivot to existing legal products (pâtés, rillettes)</li>
+                            <li>Invest in digital transformation & e-commerce</li>
+                            <li>Rebuild brand narrative around Belgian charcuterie</li>
+                            <li>Innovate with new ethical product lines</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-yellow-800">Threats</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-yellow-900">
+                            <li>The 2023 Flemish production ban</li>
+                            <li>Shifting consumer ethics against animal agriculture</li>
+                            <li>Competition from traditional & lab-grown alternatives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendations">
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center text-[#118AB2] mb-8">The Path Forward: Key Recommendations</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-4xl">🛒</span>
+                        <div>
+                            <h3 class="text-xl font-bold">Embrace Digital</h3>
+                            <p class="mt-1 text-gray-600">Launch a modern website with a full e-commerce platform to sell legal products directly to a wider audience.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-4xl">🔄</span>
+                        <div>
+                            <h3 class="text-xl font-bold">Pivot the Portfolio</h3>
+                            <p class="mt-1 text-gray-600">Aggressively market the existing range of high-quality pâtés, rillettes, and wild boar delicacies as the new flagship products.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-4xl">📖</span>
+                        <div>
+                            <h3 class="text-xl font-bold">Rewrite the Narrative</h3>
+                            <p class="mt-1 text-gray-600">Shift the brand story from "no gavage" to a broader celebration of Belgian artisanal charcuterie and sustainable farming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const processLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines.filter(line => line);
+            };
+
+            const priceData = {
+                labels: [
+                    'Foie Gras Truffé (65g)',
+                    'Foie Gras Bloc (200g)',
+                    'Eendenpaté (200g)',
+                    'Rillette van Gans (200g)',
+                    'Everzwijnpaté (180g)'
+                ].map(processLabel),
+                datasets: [{
+                    label: 'Price per kg (€)',
+                    data: [200.00, 112.50, 49.75, 49.75, 44.17],
+                    backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#06D6A0', '#06D6A0'],
+                    borderColor: '#073B4C',
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            };
+
+            const priceCtx = document.getElementById('priceComparisonChart').getContext('2d');
+            new Chart(priceCtx, {
+                type: 'bar',
+                data: priceData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Price per kg (€)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        y: {
+                           ticks: {
+                               font: {
+                                   size: 12
+                               }
+                           }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#073B4C',
+                            titleFont: { size: 16 },
+                            bodyFont: { size: 14 },
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                },
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) {
+                                        label += new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(context.parsed.x);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Gemini API Feature
+            const generateBtn = document.getElementById('generate-recipe-btn');
+            const recipeOutput = document.getElementById('recipe-output');
+            const recipeLoader = document.getElementById('recipe-loader');
+            const recipeContent = document.getElementById('recipe-content');
+            const recipeError = document.getElementById('recipe-error');
+
+            generateBtn.addEventListener('click', async () => {
+                recipeOutput.style.display = 'block';
+                recipeContent.style.display = 'none';
+                recipeError.style.display = 'none';
+                recipeLoader.style.display = 'block';
+                generateBtn.disabled = true;
+
+                try {
+                    const prompt = "Creëer een elegant en eenvoudig recept in het Nederlands met 'Rillette van Gans' en 'Everzwijnpaté'. Geef het een titel, een lijst van ingrediënten, en stapsgewijze instructies.";
+                    
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { 
+                        contents: chatHistory,
+                        generationConfig: {
+                            responseMimeType: "application/json",
+                            responseSchema: {
+                                type: "OBJECT",
+                                properties: {
+                                    "titel": { "type": "STRING" },
+                                    "ingredienten": {
+                                        "type": "ARRAY",
+                                        "items": { "type": "STRING" }
+                                    },
+                                    "instructies": {
+                                        "type": "ARRAY",
+                                        "items": { "type": "STRING" }
+                                    }
+                                }
+                            }
+                        }
+                    };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                        const jsonText = result.candidates[0].content.parts[0].text;
+                        const recipe = JSON.parse(jsonText);
+                        displayRecipe(recipe);
+                    } else {
+                        throw new Error("Ongeldig antwoord van de API.");
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    recipeError.textContent = 'Sorry, er is iets misgegaan bij het genereren van het recept. Probeer het later opnieuw.';
+                    recipeError.style.display = 'block';
+                } finally {
+                    recipeLoader.style.display = 'none';
+                    generateBtn.disabled = false;
+                }
+            });
+
+            function displayRecipe(recipe) {
+                recipeContent.innerHTML = `
+                    <h3 class="text-2xl font-bold text-[#073B4C] mb-4">${recipe.titel}</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2 text-[#118AB2]">Ingrediënten:</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                ${recipe.ingredienten.map(i => `<li>${i}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2 text-[#118AB2]">Instructies:</h4>
+                            <ol class="list-decimal list-inside text-gray-700 space-y-2">
+                                ${recipe.instructies.map(i => `<li>${i}</li>`).join('')}
+                            </ol>
+                        </div>
+                    </div>
+                `;
+                recipeContent.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
