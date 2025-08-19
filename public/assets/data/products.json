@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Foie Gras van Gans (Natuur)",
+    "type": "Gans",
+    "description": "Onze signatuur foie gras, puur en onbewerkt. Zacht en vol van smaak.",
+    "price_per_kg": 150,
+    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Foie+Gras+Gans"
+  },
+  {
+    "id": 2,
+    "name": "Foie Gras van Eend (Natuur)",
+    "type": "Eend",
+    "description": "Een karaktervolle foie gras met een meer uitgesproken, rustieke smaak.",
+    "price_per_kg": 135,
+    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Foie+Gras+Eend"
+  },
+  {
+    "id": 3,
+    "name": "Rillettes van Gans",
+    "type": "Gans",
+    "description": "Smeuïg en rijk van smaak, perfect voor op een stukje knapperig brood.",
+    "price_per_kg": 75,
+    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Rillettes+Gans"
+  },
+  {
+    "id": 4,
+    "name": "Paté van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Een krachtige, ambachtelijke wildpaté met een rijke en aardse smaak.",
+    "price_per_kg": 60,
+    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Pat%C3%A9+Everzwijn"
+  },
+  {
+    "id": 5,
+    "name": "Gekonfijte Eendenbout",
+    "type": "Eend",
+    "description": "Klassiek gekonfijt, mals vlees dat van het bot valt. Een ware delicatesse.",
+    "price_per_kg": 85,
+    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Eendenbout"
+  }
+]

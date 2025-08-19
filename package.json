@@ -1,0 +1,14 @@
+{
+  "name": "handsaemefoiegras",
+  "version": "1.0.0",
+  "description": "Website for Handsaeme Foie Gras, artisanal delicatessen from Kortemark.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/style.css --watch"
+  },
+  "author": "Handsaeme Foie Gras",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

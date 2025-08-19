@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ontdek artisanale foie gras en delicatessen van Handsaeme uit Kortemark, bereid met respect voor dier en traditie, zonder dwangvoederen.">
+    <meta name="author" content="Handsaeme Foie Gras">
+    <title>Handsaeme Foie Gras - Artisanal Delicatessen from Kortemark</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body class="font-sans">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="hero" class="hero-bg text-white min-h-[70vh] flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">De Smaak van Traditie</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Artisanale delicatessen, met passie bereid op onze hoeve in het hart van West-Vlaanderen.</p>
+        </section>
+
+        <section id="story" class="py-20 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Ons Verhaal: Van "Gans-aeme" tot Delicatesse</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">Sinds 1990 zetten wij, Jan Deprez en Ingrid Dewulf, de traditie van ambachtelijke vleesverwerking voort. Onze hoeve, gelegen in het historische "Gans-aeme" of "ganzenweide", is de kern van ons bedrijf.</p>
+                    <p class="text-lg text-gray-700 leading-relaxed">Deze volledige controle, van eigen graan tot eindproduct, stelt ons in staat om een ongeëvenaarde kwaliteit en authentieke smaak te garanderen. Wij nodigen u uit om de passie en het vakmanschap te proeven.</p>
+                </div>
+                <div>
+                    <img src="assets/images/farm-story.jpg" alt="De hoeve van Handsaeme in Kortemark" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4">Ontdek Onze Producten</h2>
+                <p class="max-w-3xl mx-auto text-lg text-center text-gray-600 mb-12">Verken ons assortiment van artisanale delicatessen. Filter op diersoort en vergelijk de prijzen per kilogram in de grafiek.</p>
+                
+                <div id="product-filters" class="flex justify-center flex-wrap gap-2 md:gap-4 mb-8">
+                    </div>
+                
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+                    </div>
+                
+                <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Prijsvergelijking (€ per kg)</h3>
+                <div class="chart-container bg-white p-4 rounded-lg shadow-xl">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="method" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Onze Methode: Respect voor Dier en Smaak</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">Ons paradepaardje, de foie gras, wordt bereid zonder dwangvoederen (*gavage*). Dit is onze belofte aan u en aan het welzijn van onze dieren.</p>
+                <div class="max-w-2xl mx-auto bg-brand-cream p-8 rounded-lg shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-brand-gold mb-4">Foie Gras Zonder Dwangvoederen</h3>
+                    <p class="text-gray-700 leading-relaxed">In plaats van de dieren te forceren, creëren we een omgeving waarin ze hun lever op een natuurlijke manier verrijken. Door een zorgvuldig samengesteld dieet intensief aan te bieden, stimuleren we hun natuurlijke neiging om reserves op te bouwen. Dit resulteert in een uitzonderlijk smaakvolle en ethisch verantwoorde foie gras.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>

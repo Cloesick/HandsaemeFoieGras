@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-dark-brown antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply pb-1 border-b-2 border-transparent text-brand-muted-brown transition-colors duration-300;
+  }
+  .nav-link:hover, .nav-link.active {
+    @apply text-brand-gold border-brand-gold;
+  }
+  .chart-container {
+    @apply relative w-full max-w-4xl mx-auto h-[350px] md:h-[450px] max-h-[60vh];
+  }
+  .hero-bg {
+    /* Remember to create an images folder and add a hero-background.jpg file */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/hero-background.jpg');
+    @apply bg-cover bg-center;
+  }
+}
