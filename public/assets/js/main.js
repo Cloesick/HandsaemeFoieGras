@@ -1,142 +1,108 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Global Functions & Initializers ---
+// This function will run only after the loader has finished its job
+function initializeProductSection() {
+    let allProducts = [];
+    let priceChart;
 
-    const loadComponent = async (selector, url) => {
-        try {
-            const element = document.querySelector(selector);
-            if (element) {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`Failed to load ${url}`);
-                element.innerHTML = await response.text();
-            }
-        } catch (error) {
-            console.error(`Error loading component: ${error.message}`);
-        }
-    };
-
-    loadComponent('#header-placeholder', '/components/header.html');
-    loadComponent('#footer-placeholder', '/components/footer.html')
-        .then(() => {
-            const yearSpan = document.getElementById('current-year');
-            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
-        });
-
-    if (document.getElementById('product-grid')) {
-        initHomePage();
-    }
-});
-
-
-// --- Home Page Specific Functions ---
-
-async function initHomePage() {
-    try {
-        const response = await fetch('/assets/data/products.json');
-        if (!response.ok) throw new Error('Product data not found.');
-        const products = await response.json();
-        
-        setupFilters(products);
-        renderProducts(products);
-        renderPriceChart(products);
-
-    } catch (error) {
-        console.error(`Error initializing home page: ${error.message}`);
-        document.getElementById('product-grid').innerHTML = `<p class="text-center text-red-500 col-span-full">Kon producten niet laden. Probeer het later opnieuw.</p>`;
-    }
-}
-
-function renderProducts(products, filter = 'all') {
     const productGrid = document.getElementById('product-grid');
-    productGrid.innerHTML = ''; 
+    const productFilters = document.getElementById('product-filters');
+    const chartCanvas = document.getElementById('priceChart');
 
-    const filteredProducts = filter === 'all'
-        ? products
-        : products.filter(p => p.type === filter);
-    
-    if (filteredProducts.length === 0) {
-        productGrid.innerHTML = `<p class="text-center text-gray-500 col-span-full">Geen producten gevonden voor deze selectie.</p>`;
+    // If these elements don't exist, stop the function
+    if (!productGrid || !productFilters || !chartCanvas) {
         return;
     }
 
-    filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300';
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <span class="inline-block bg-brand-gold/20 text-brand-gold text-xs font-semibold px-2 py-1 rounded-full mb-2">${product.type}</span>
-                <h3 class="text-2xl font-bold mb-2 text-brand-dark-brown">${product.name}</h3>
-                <p class="text-gray-600 leading-relaxed">${product.description}</p>
-            </div>
-        `;
-        productGrid.appendChild(card);
-    });
-}
-
-function setupFilters(products) {
-    const filtersContainer = document.getElementById('product-filters');
-    const types = ['all', ...new Set(products.map(p => p.type))];
-
-    types.forEach(type => {
-        const button = document.createElement('button');
-        button.className = 'filter-btn px-6 py-2 rounded-full shadow-md transition-colors';
-        button.textContent = type === 'all' ? 'Alles' : type;
-        button.dataset.filter = type;
-
-        if (type === 'all') {
-            button.classList.add('bg-brand-gold', 'text-white');
-        } else {
-            button.classList.add('bg-white', 'text-brand-gold');
+    async function fetchProducts() {
+        try {
+            const response = await fetch('public/assets/data/products.json');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            allProducts = await response.json();
+            displayProducts();
+        } catch (error) {
+            console.error("Could not fetch products:", error);
+            productGrid.innerHTML = `<p class="col-span-full text-center text-red-500">Kon de producten niet laden.</p>`;
         }
+    }
 
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-brand-gold', 'text-white');
-                btn.classList.add('bg-white', 'text-brand-gold');
+    function displayProducts() {
+        createFilterButtons();
+        renderProducts('all');
+        addFilterEventListeners();
+    }
+
+    function createFilterButtons() {
+        const types = ['all', ...new Set(allProducts.map(p => p.type))];
+        productFilters.innerHTML = types.map(type => `
+            <button class="filter-btn px-4 py-2 rounded-full shadow transition-colors duration-300 ${type === 'all' ? 'bg-brand-gold text-white' : 'bg-white text-brand-gold'}" data-filter="${type}">
+                ${type.charAt(0).toUpperCase() + type.slice(1)}
+            </button>
+        `).join('');
+    }
+    
+    function renderProducts(filter = 'all') {
+        const filteredProducts = filter === 'all' ? allProducts : allProducts.filter(p => p.type === filter);
+        productGrid.innerHTML = filteredProducts.map(product => {
+            const pricePerKg = product.price_per_kg ? product.price_per_kg.toFixed(2) : ((product.price / product.weight) * 1000).toFixed(2);
+            return `
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x300/ccc/FFFFFF?text=Geen+Afbeelding';">
+                    <h4 class="font-bold text-xl text-brand-dark-brown">${product.name}</h4>
+                    <p class="text-md text-gray-500 mb-3">${product.type}</p>
+                    ${product.price ? `<p class="text-2xl font-semibold text-brand-gold mb-1">${product.price.toFixed(2)}€</p>` : ''}
+                    ${product.weight ? `<p class="text-xs text-gray-400 mb-3">(${product.weight}g)</p>` : ''}
+                    <p class="text-md font-medium text-gray-700">${pricePerKg}€ / kg</p>
+                </div>
+            `;
+        }).join('');
+        updateChart(filteredProducts);
+    }
+    
+    function addFilterEventListeners() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('bg-brand-gold', 'text-white'));
+                filterBtns.forEach(b => b.classList.add('bg-white', 'text-brand-gold'));
+                btn.classList.add('bg-brand-gold', 'text-white');
+                btn.classList.remove('bg-white');
+                renderProducts(btn.dataset.filter);
             });
-            button.classList.add('bg-brand-gold', 'text-white');
-            button.classList.remove('bg-white', 'text-brand-gold');
-            renderProducts(products, type);
         });
+    }
 
-        filtersContainer.appendChild(button);
-    });
-}
-
-function renderPriceChart(products) {
-    const ctx = document.getElementById('priceChart');
-    if (!ctx || typeof Chart === 'undefined') return;
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: products.map(p => p.name),
+    function updateChart(data) {
+        const ctx = chartCanvas.getContext('2d');
+        const chartData = {
+            labels: data.map(p => p.name),
             datasets: [{
                 label: 'Prijs per kg (€)',
-                data: products.map(p => p.price_per_kg),
-                backgroundColor: 'rgba(184, 134, 11, 0.6)',
-                borderColor: 'rgba(184, 134, 11, 1)',
-                borderWidth: 1
+                data: data.map(p => p.price_per_kg ? p.price_per_kg : ((p.price / p.weight) * 1000)),
+                backgroundColor: 'rgba(184, 134, 11, 0.7)',
+                borderColor: '#B8860B',
+                borderWidth: 2,
+                borderRadius: 5,
             }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            indexAxis: 'y',
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    title: { display: true, text: 'Prijs in Euro (€)' }
+        };
+
+        if (priceChart) {
+            priceChart.data = chartData;
+            priceChart.update();
+        } else {
+            priceChart = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } }
                 }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: context => `€ ${context.raw.toFixed(2)} per kg`
-                    }
-                }
-            }
+            });
         }
-    });
+    }
+
+    fetchProducts();
 }
+
+// Listen for the custom event from loader.js before running the product script
+document.addEventListener('componentsLoaded', initializeProductSection);
