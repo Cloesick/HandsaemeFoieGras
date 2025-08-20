@@ -1,0 +1,27 @@
+ID 1: product-foie-gras-pot
+
+ID 2: product-foie-gras-blik
+
+ID 3: product-foie-gras-truffel
+
+ID 4: product-rillette-gans
+
+ID 18: Verse+Ganzenlever
+
+ID 19: Ganzenlever+Mi-Cuit
+
+ID 20: Ganzenlever+Truffel
+
+ID 21: Ganzennek
+
+ID 22: Gedroogde+Ganzenborst
+
+ID 23: Droogworst+Gans
+
+ID 24: Ganzenvet
+
+
+
+
+
+

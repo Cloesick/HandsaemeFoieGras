@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerij - Handsaeme Foie Gras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/assets/css/style.css">
+    <style>
+        /* Simple transition for the slides */
+        .carousel-item {
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .carousel-link:hover h2 {
+            color: #B8860B; /* brand-gold color on hover */
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <div id="header-placeholder"></div>
+
+    <main class="py-20">
+        <div class="container mx-auto px-6">
+
+            <!-- Grid container for side-by-side carousels -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Food Carousel Section -->
+                <section id="food-carousel-section">
+                    <a href="index.html#products" class="carousel-link block group">
+                        <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300">Onze Delicatessen</h2>
+                        <div id="food-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
+                            <!-- Carousel Wrapper -->
+                            <div class="relative h-96">
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <img src="public/images/food-1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/A97C50/FFFFFF?text=Food+Afbeelding+1';" alt="Food gerecht 1" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <img src="public/images/food-2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/A97C50/FFFFFF?text=Food+Afbeelding+2';" alt="Food gerecht 2" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="carousel-item">
+                                    <img src="public/images/food-3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/A97C50/FFFFFF?text=Food+Afbeelding+3';" alt="Food gerecht 3" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <!-- Prev/Next Controls -->
+                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
+                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
+                        </div>
+                    </a>
+                </section>
+
+                <!-- Venue Carousel Section -->
+                <section id="venue-carousel-section">
+                    <a href="index.html#contact" class="carousel-link block group">
+                        <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300">Onze Hoeve</h2>
+                        <div id="venue-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
+                            <!-- Carousel Wrapper -->
+                            <div class="relative h-96">
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <img src="public/images/venue-1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3D2B1F/FFFFFF?text=Locatie+Afbeelding+1';" alt="Locatie 1" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <img src="public/images/venue-2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3D2B1F/FFFFFF?text=Locatie+Afbeelding+2';" alt="Locatie 2" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="carousel-item">
+                                    <img src="public/images/venue-3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3D2B1F/FFFFFF?text=Locatie+Afbeelding+3';" alt="Locatie 3" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <!-- Prev/Next Controls -->
+                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
+                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
+                        </div>
+                    </a>
+                </section>
+
+            </div>
+        </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="public/assets/js/loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function initializeCarousel(carouselId) {
+                const carousel = document.getElementById(carouselId);
+                if (!carousel) return;
+
+                const slides = carousel.querySelectorAll('.carousel-item');
+                const prevButton = carousel.querySelector('.carousel-prev');
+                const nextButton = carousel.querySelector('.carousel-next');
+                let currentIndex = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                prevButton.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the link from firing when clicking the button
+                    e.stopPropagation(); // Stop the click from bubbling up to the <a> tag
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    showSlide(currentIndex);
+                });
+
+                nextButton.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the link from firing when clicking the button
+                    e.stopPropagation(); // Stop the click from bubbling up to the <a> tag
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    showSlide(currentIndex);
+                });
+
+                showSlide(currentIndex);
+            }
+
+            initializeCarousel('food-carousel');
+            initializeCarousel('location-carousel');
+        });
+    </script>
+</body>
+</html>

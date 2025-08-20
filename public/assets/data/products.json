@@ -7,7 +7,7 @@
     "weight": 200,
     "price": 22.50,
     "price_per_kg": 112.50,
-    "image": "public/assets/images/product-foie-gras-pot.jpg"
+    "image": "public/images/food/gans/FoieGrasBlocPot.png"
   },
   {
     "id": 2,
@@ -17,17 +17,17 @@
     "weight": 100,
     "price": 12.50,
     "price_per_kg": 125.00,
-    "image": "public/assets/images/product-foie-gras-blik.jpg"
+    "image": "public/images/food/gans/FoieGrasBlocBlik.png"
   },
   {
     "id": 3,
-    "name": "Foie Gras Truffé",
+    "name": "Foie Gras Truffé (Blik)",
     "type": "Gans",
     "description": "Een luxe variant van onze foie gras, verrijkt met de aardse smaak van truffel.",
     "weight": 65,
     "price": 12.95,
     "price_per_kg": 199.23,
-    "image": "public/assets/images/product-foie-gras-truffel.jpg"
+    "image": "public/images/food/gans/FoieGrasTruff.png"
   },
   {
     "id": 4,
@@ -37,17 +37,17 @@
     "weight": 200,
     "price": 9.95,
     "price_per_kg": 49.75,
-    "image": "public/assets/images/product-rillette-gans.jpg"
+    "image": "public/images/food/gans/RilletteVanGans.png"
   },
   {
     "id": 5,
-    "name": "Eendenpaté",
+    "name": "Eendenpaté (Bokaal)",
     "type": "Eend",
     "description": "Een klassieke, ambachtelijke paté met de karakteristieke smaak van eend.",
     "weight": 200,
     "price": 9.95,
     "price_per_kg": 49.75,
-    "image": "public/assets/images/product-eendenpate.jpg"
+    "image": "public/images/food/eend/Eendenpat.png"
   },
   {
     "id": 6,
@@ -57,15 +57,15 @@
     "weight": 180,
     "price": 7.95,
     "price_per_kg": 44.17,
-    "image": "public/assets/images/product-everzwijnpate.jpg"
+    "image": "public/images/food/everzwijn/Everzwijnpate.png"
   },
   {
     "id": 7,
-    "name": "Foie Gras van Eend (Natuur)",
+    "name": "Verse Eendenlever (Foie Gras Cru)",
     "type": "Eend",
-    "description": "Een karaktervolle foie gras met een meer uitgesproken, rustieke smaak.",
+    "description": "Een karaktervolle foie gras met een meer uitgesproken, rustieke smaak, perfect om zelf te bereiden.",
     "price_per_kg": 135,
-    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Foie+Gras+Eend"
+    "image": "public/images/food/eend/VerseEendenlever.png"
   },
   {
     "id": 8,
@@ -73,6 +73,138 @@
     "type": "Eend",
     "description": "Klassiek gekonfijt, mals vlees dat van het bot valt. Een ware delicatesse.",
     "price_per_kg": 85,
-    "image": "https://placehold.co/400x300/A97C50/FFFFFF?text=Eendenbout"
+    "image": "public/images/food/eend/GekonfijteEendenbout.png"
+  },
+  {
+    "id": 9,
+    "name": "Saucissons van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Ambachtelijke droge worst van everzwijn, perfect als aperitief.",
+    "price_per_kg": 75,
+    "image": "public/images/food/everzwijn/SaucissonsVanEverzwijn.png"
+  },
+  {
+    "id": 10,
+    "name": "Coppa van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Fijngesneden en gedroogde everzwijncoppa, een delicatesse voor de fijnproever.",
+    "price_per_kg": 80,
+    "image": "public/images/food/everzwijn/CoppaVanEverzwijn.png"
+  },
+  {
+    "id": 11,
+    "name": "Rillette van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Smeuïge rillette van everzwijn, rijk en vol van smaak.",
+    "price_per_kg": 55,
+    "image": "public/images/food/everzwijn/RilletteVanEverzwijn.png"
+  },
+  {
+    "id": 12,
+    "name": "Persillade van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Een hartige bereiding van everzwijn met look en peterselie.",
+    "price_per_kg": 50,
+    "image": "public/images/food/everzwijn/PersilladeVanEverzwijn.png"
+  },
+  {
+    "id": 13,
+    "name": "Stoverij van Everzwijn",
+    "type": "Everzwijn",
+    "description": "Traditionele, huisgemaakte stoverij van everzwijn, klaar om op te warmen.",
+    "price_per_kg": 40,
+    "image": "public/images/food/everzwijn/StoverijVanEverzwijn.png"
+  },
+  {
+    "id": 14,
+    "name": "Verse Eendenborst (Magret)",
+    "type": "Eend",
+    "description": "Een malse en smaakvolle eendenborst, ideaal om te bakken op het vel.",
+    "price_per_kg": 45,
+    "image": "public/images/food/eend/VerseEendenborst.png"
+  },
+  {
+    "id": 15,
+    "name": "Gerookte Eendenborst",
+    "type": "Eend",
+    "description": "Fijn gesneden en gerookte eendenborst, heerlijk in salades of als voorgerecht.",
+    "price_per_kg": 65,
+    "image": "public/images/food/eend/GerookteEendenborst.png"
+  },
+  {
+    "id": 16,
+    "name": "Eendenpaté (Blik)",
+    "type": "Eend",
+    "description": "Onze klassieke eendenpaté, handig verpakt in blik voor langere houdbaarheid.",
+    "weight": 180,
+    "price": 8.95,
+    "price_per_kg": 49.72,
+    "image": "public/images/food/eend/Eendenpat.png"
+  },
+  {
+    "id": 17,
+    "name": "Geconfijte Eendenmaagjes (Blik)",
+    "type": "Eend",
+    "description": "Een traditionele Franse delicatesse, zacht en smaakvol, perfect voor salades.",
+    "price_per_kg": 70,
+    "image": "public/images/food/eend/GeconfijteEendenmaagjes.png"
+  },
+  {
+    "id": 18,
+    "name": "Verse Ganzenlever (Foie Gras Cru)",
+    "type": "Gans",
+    "description": "Topkwaliteit verse ganzenlever, ideaal om zelf te bakken of te verwerken in terrines.",
+    "price_per_kg": 140,
+    "image": "public/images/food/gans/VerseGanzenlever.png"
+  },
+  {
+    "id": 19,
+    "name": "Bereide Ganzenlever (Mi-Cuit)",
+    "type": "Gans",
+    "description": "Half-gegaarde ganzenlever, klaar om te serveren. Rijk en delicaat van smaak.",
+    "price_per_kg": 160,
+    "image": "public/images/food/gans/BereideGanzenlever.png"
+  },
+  {
+    "id": 20,
+    "name": "Bloc Ganzenlever Truffé (Bokaal)",
+    "type": "Gans",
+    "description": "Een luxe variant van onze foie gras in bokaal, verrijkt met de aardse smaak van truffel.",
+    "weight": 180,
+    "price": 25.50,
+    "price_per_kg": 141.67,
+    "image": "public/images/food/gans/BlocGanzenleverTruff.png"
+  },
+  {
+    "id": 21,
+    "name": "Opgevulde Ganzennek met Truffel",
+    "type": "Gans",
+    "description": "Een klassieke specialiteit: ganzennek gevuld met foie gras en truffel.",
+    "price_per_kg": 95,
+    "image": "public/images/food/gans/OpgevuldeGanzennekMetTruffel.png"
+  },
+  {
+    "id": 22,
+    "name": "Gedroogde Ganzenborst",
+    "type": "Gans",
+    "description": "Fijn gesneden, gedroogde en gekruide ganzenborst. Perfect als aperitief.",
+    "price_per_kg": 85,
+    "image": "public/images/food/gans/GedroogdeGanzenborst.png"
+  },
+  {
+    "id": 23,
+    "name": "Droogworst van Gans met Armagnac",
+    "type": "Gans",
+    "description": "Een unieke droge worst met de rijke smaak van gans en een vleugje Armagnac.",
+    "price_per_kg": 70,
+    "image": "public/images/food/gans/DroogworstVanGansMetArmagnac.png"
+  },
+  {
+    "id": 24,
+    "name": "Ganzenvet",
+    "type": "Gans",
+    "description": "Puur ganzenvet, ideaal voor het bakken van aardappelen of het konfijten van vlees.",
+    "price_per_kg": 25,
+    "image": "public/images/food/gans/Ganzenvet.png"
   }
 ]

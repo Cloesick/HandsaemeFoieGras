@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "src": "public/images/products/CharcuterieBlueRedGreenBoar.jpg",
+      "alt": "Charcuterie met everzwijnpaté",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Charcuterie"
+    },
+    {
+      "src": "public/images/products/RedWineBottles.jpg",
+      "alt": "Wijnflessen",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Wijn"
+    },
+    {
+      "src": "public/images/products/VirginOliveOil.jpg",
+      "alt": "Olijfolie",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Olijfolie"
+    }
+  ]
+}

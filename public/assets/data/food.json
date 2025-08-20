@@ -1,0 +1,19 @@
+{
+  "food": [
+    {
+      "src": "public/images/food/FoieGrasToast.jpg",
+      "alt": "Toast met foie gras",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Toast+Foie+Gras"
+    },
+    {
+      "src": "public/images/food/GoldenFoieGras.jpg",
+      "alt": "Gouden foie gras",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Gouden+Foie+Gras"
+    },
+    {
+      "src": "public/images/food/Pate.jpg",
+      "alt": "Artisanale paté",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Pat%C3%A9"
+    }
+  ]
+}

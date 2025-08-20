@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { path: 'public/components/products.html', id: 'products-placeholder' },
         { path: 'public/components/method.html', id: 'method-placeholder' },
         { path: 'public/components/contact.html', id: 'contact-placeholder' },
-        { path: 'public/components/footer.html', id: 'footer-placeholder' }
+        { path: 'public/components/footer.html', id: 'footer-placeholder' },
+        { path: 'public/components/carousel.html', id: 'carousel-placeholder' },
+    
     ];
 
     const fetchComponent = (component) => {

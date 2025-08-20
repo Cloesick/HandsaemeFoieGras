@@ -1,0 +1,14 @@
+{
+  "gifts": [
+    {
+      "src": "public/images/gifts/BlackRedBoxFoieGras.jpg",
+      "alt": "Geschenkdoos met foie gras",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Geschenkdoos"
+    },
+    {
+      "src": "public/images/gifts/BlueRedGreenBoar.jpg",
+      "alt": "Geschenkverpakking met everzwijnpaté",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Geschenkverpakking"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "production": [
+    {
+      "src": "public/images/production/DriedMeat.jpg",
+      "alt": "Gedroogd vlees",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Gedroogd+Vlees"
+    },
+    {
+      "src": "public/images/production/DriedMeatHanging.jpg",
+      "alt": "Gedroogd vlees dat hangt te rijpen",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Rijpend+Vlees"
+    },
+    {
+      "src": "public/images/production/MeatGrinder.jpg",
+      "alt": "Vleesmolen in productie",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Vleesmolen"
+    },
+    {
+      "src": "public/images/production/WildBoars.jpg",
+      "alt": "Everzwijnen op de hoeve",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Everzwijnen"
+    }
+  ]
+}

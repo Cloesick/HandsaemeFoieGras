@@ -1,0 +1,51 @@
+{
+  "location": [
+    {
+      "src": "public/images/EventLocationGlas.jpg",
+      "alt": "De ontvangstruimte met glazen wand",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Ontvangstruimte"
+    },
+    {
+      "src": "public/images/EventLocationOutdoors.png",
+      "alt": "Buitenaanzicht van de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Buitenaanzicht"
+    },
+    {
+      "src": "public/images/EventLocationRoof.jpg",
+      "alt": "Zicht op het dak van de locatie",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Dak"
+    },
+    {
+      "src": "public/images/EventLocationTerrace.jpg",
+      "alt": "Het terras van de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Terras"
+    },
+    {
+      "src": "public/images/OwnerF.jpg",
+      "alt": "De eigenaar van Handsaeme",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Eigenaar"
+    },
+    {
+      "src": "public/images/Ofyr.jpg",
+      "alt": "Willos op de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    },
+     {
+      "src": "public/images/Landscapemist.jpg",
+      "alt": "Willos op de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    }, {
+      "src": "public/images/Willos.jpg",
+      "alt": "Willos op de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    }, {
+      "src": "public/images/Willos.jpg",
+      "alt": "Willos op de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    }, {
+      "src": "public/images/Willos.jpg",
+      "alt": "Willos op de hoeve",
+      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    }
+  ]
+}
