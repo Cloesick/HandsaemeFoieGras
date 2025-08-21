@@ -1,16 +1,112 @@
-<!-- This is the rebuilt header component with a dark theme and functional links. -->
-<header class="bg-brand-dark-brown text-white shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex flex-col items-center">
-        <!-- Main Title -->
-        <a href="index.html" class="text-2xl tracking-widest mb-4">HANDSAEME FOIE GRAS</a>
-        <!-- Separator Line -->
-        <hr class="w-full border-t border-gray-600">
-        <!-- Navigation Links -->
-        <nav class="w-full flex justify-center items-center mt-4 space-x-6 md:space-x-8 text-sm tracking-wider">
-            <a href="#story" class="nav-link">ABOUT</a>
-            <a href="#products" class="nav-link">ONZE PRODUCTEN</a>
-            <a href="#method" class="nav-link">BEDRIJFSBEZOEK</a>
-            <a href="#contact" class="nav-link">CONTACT</a>
-        </nav>
+<!-- This is the final, unified header with a large icon, brand text, navigation, and language selector all in a single bar. -->
+<style>
+    /* Custom styles for the header, inspired by the logo's color palette */
+    .header-background {
+        background-color: #3a3228; /* Deep, rich brown from the example image */
+        color: #e0c9a6; /* Creamy gold from the logo's text */
+    }
+
+    .nav-link-animated {
+        position: relative;
+        padding-bottom: 8px;
+        text-decoration: none;
+        color: rgba(224, 201, 166, 0.85); /* Muted gold */
+        transition: color 0.3s ease;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    .nav-link-animated:hover {
+        color: #ffffff;
+    }
+
+    .nav-link-animated::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0c9a6; /* Gold accent */
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s ease;
+    }
+
+    .nav-link-animated:hover::after {
+        transform: scaleX(1);
+    }
+    
+    .lang-item {
+        position: relative;
+    }
+
+    .lang-flag {
+        position: absolute;
+        top: 100%; /* Position below the language selector */
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        border-radius: 2px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .lang-item:hover .lang-flag {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+</style>
+
+<header class="header-background text-white shadow-lg sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
+    <div class="container mx-auto px-6">
+        <!-- The fixed height has been replaced with vertical padding 'py-4' for adaptive spacing -->
+        <!-- Added flex-wrap to allow items to wrap on smaller screens -->
+        <div class="flex items-center justify-between py-4 flex-wrap"> 
+
+            <!-- Left Side: Icon and Brand Text wrapped in a single link -->
+            <a href="index.html" class="flex items-center gap-5 group" aria-label="Home">
+                <!-- Large Icon -->
+                <img src="public/images/icons/SealColored3ALLGarlicOnionsHerbsLightBrownBG.png" alt="Handsaeme Foie Gras Logo" class="h-40 w-40 transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
+                
+                <!-- Brand Text (hiding classes removed) -->
+                <div>
+                    <h1 class="text-4xl font-bold font-serif leading-tight">Handsaeme Foie Gras</h1>
+                    <h3 class="text-xl font-bold font-serif leading-tight text-gray-300">Artisanale delicatessen uit West-Vlaanderen.</h3>
+                </div>
+            </a>
+
+            <!-- Right Side: Navigation, Languages, and Mobile Menu -->
+            <div class="flex items-center gap-8 flex-wrap">
+                <!-- Center: Quick Links (hiding classes removed) -->
+                <nav class="flex items-center space-x-8 text-xl text-gray-50">
+                    <a href="#story" class="nav-link-animated font-serif leading-tight">ONS VERHAAL</a>
+                    <a href="#products" class="nav-link-animated font-serif leading-tight">PRODUCTEN</a>
+                    <a href="#method" class="nav-link-animated font-serif leading-tight">METHODE</a>
+                    <a href="#contact" class="nav-link-animated font-serif leading-tight">CONTACT</a>
+                </nav>
+
+                <!-- Language Selector (hiding classes removed) -->
+                <div id="language-selector" class="flex items-center space-x-4 text-sm border-l border-white/20 pl-8">
+                    <div class="lang-item">
+                        <button data-lang="nl" class="lang-button font-bold text-white">NL</button>
+                        <img src="https://flagcdn.com/w40/be.png" alt="Belgian Flag" class="lang-flag w-8">
+                    </div>
+                    <div class="lang-item">
+                        <button data-lang="fr" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">FR</button>
+                        <img src="https://flagcdn.com/w40/fr.png" alt="French Flag" class="lang-flag w-8">
+                    </div>
+                    <div class="lang-item">
+                        <button data-lang="en" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">EN</button>
+                        <img src="https://flagcdn.com/w40/gb.png" alt="British Flag" class="lang-flag w-8">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </header>
+
+<!-- This script tag will load the header's specific JavaScript -->
+<script src="public/assets/js/header.js" defer></script>

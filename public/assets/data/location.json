@@ -1,51 +1,44 @@
 {
-  "location": [
+  "locations": [
     {
-      "src": "public/images/EventLocationGlas.jpg",
-      "alt": "De ontvangstruimte met glazen wand",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Ontvangstruimte"
+      "id": 1,
+      "src": "public/images/location/EventLocationGlas.jpg",
+      "alt": "De glazen wand van de sfeervolle ontvangstruimte."
     },
     {
-      "src": "public/images/EventLocationOutdoors.png",
-      "alt": "Buitenaanzicht van de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Buitenaanzicht"
+      "id": 2,
+      "src": "public/images/location/EventLocationOutdoors.png",
+      "alt": "Buitenaanzicht van de authentieke hoeve bij valavond."
     },
     {
-      "src": "public/images/EventLocationRoof.jpg",
-      "alt": "Zicht op het dak van de locatie",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Dak"
+      "id": 3,
+      "src": "public/images/location/EventLocationRoof.jpg",
+      "alt": "Een detail van de rustieke dakconstructie van de hoeve."
     },
     {
-      "src": "public/images/EventLocationTerrace.jpg",
-      "alt": "Het terras van de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Terras"
+      "id": 4,
+      "src": "public/images/location/EventLocationTerrace.jpg",
+      "alt": "Het ruime en zonnige terras, klaar voor een evenement."
     },
     {
-      "src": "public/images/OwnerF.jpg",
-      "alt": "De eigenaar van Handsaeme",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Eigenaar"
+      "id": 5,
+      "src": "public/images/location/OwnerF.jpg",
+      "alt": "De eigenaar, trots poserend op het domein."
     },
     {
-      "src": "public/images/Ofyr.jpg",
-      "alt": "Willos op de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+      "id": 6,
+      "src": "public/images/location/Ofyr.jpg",
+      "alt": "De Ofyr vuurschaal, een centraal punt voor gezelligheid."
     },
-     {
-      "src": "public/images/Landscapemist.jpg",
-      "alt": "Willos op de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
-    }, {
-      "src": "public/images/Willos.jpg",
-      "alt": "Willos op de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
-    }, {
-      "src": "public/images/Willos.jpg",
-      "alt": "Willos op de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
-    }, {
-      "src": "public/images/Willos.jpg",
-      "alt": "Willos op de hoeve",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Willos"
+    {
+      "id": 7,
+      "src": "public/images/location/Landscapemist.jpg",
+      "alt": "Het omliggende landschap gehuld in ochtendmist."
+    },
+    {
+      "id": 8,
+      "src": "public/images/location/Willos.jpg",
+      "alt": "Willos, de hond van de hoeve, rustend in het gras."
     }
   ]
 }

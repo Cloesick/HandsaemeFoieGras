@@ -1,9 +1,11 @@
 {
   "gifts": [
-    {
-      "src": "public/images/gifts/BlackRedBoxFoieGras.jpg",
-      "alt": "Geschenkdoos met foie gras",
-      "placeholder": "https://placehold.co/800x400/3D2B1F/FFFFFF?text=Geschenkdoos"
+       {
+      "id": 1,
+      "title": "Luxe Foie Gras in Geschenkdoos",
+      "src": "public/images/products/Blackredboxfoiegras.jpg",
+      "alt": "Een blok foie gras gepresenteerd in een elegante, zwart met rode geschenkverpakking.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Luxe+Foie+Gras+in+Geschenkdoos"
     },
     {
       "src": "public/images/gifts/BlueRedGreenBoar.jpg",

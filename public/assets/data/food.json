@@ -1,19 +1,53 @@
 {
-  "food": [
+  "products": [
     {
-      "src": "public/images/food/FoieGrasToast.jpg",
-      "alt": "Toast met foie gras",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Toast+Foie+Gras"
+      "id": 1,
+      "title": "Luxe Foie Gras in Geschenkdoos",
+      "src": "public/images/products/Blackredboxfoiegras.jpg",
+      "alt": "Een blok foie gras gepresenteerd in een elegante, zwart met rode geschenkverpakking.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Luxe+Foie+Gras+in+Geschenkdoos"
     },
     {
-      "src": "public/images/food/GoldenFoieGras.jpg",
-      "alt": "Gouden foie gras",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Gouden+Foie+Gras"
+      "id": 2,
+      "title": "Logo 'Het Everzwijn'",
+      "src": "public/images/products/Blueredgreenboar.jpg",
+      "alt": "Het kleurrijke logo van 'Het Everzwijn', met blauwe, rode en groene grafische elementen.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Logo+Het+Everzwijn"
     },
     {
-      "src": "public/images/food/Pate.jpg",
-      "alt": "Artisanale paté",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Pat%C3%A9"
+      "id": 3,
+      "title": "Foie Gras in Kartonnen Verpakking",
+      "src": "public/images/products/Cartonfoiegrasandgreenboar.jpg",
+      "alt": "Een milieuvriendelijke kartonnen verpakking met een blok foie gras en het groene 'Het Everzwijn' logo.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Foie+Gras+in+Kartonnen+Verpakking"
+    },
+    {
+      "id": 4,
+      "title": "Geschenkkist met Foie Gras",
+      "src": "public/images/products/Foiegrascheast.jpg",
+      "alt": "Een rustieke houten kist gevuld met verschillende soorten foie gras, perfect als geschenk.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Geschenkkist+met+Foie+Gras"
+    },
+    {
+      "id": 5,
+      "title": "Premium Foie Gras (Gouden Editie)",
+      "src": "public/images/products/Goldenfoiegras.jpg",
+      "alt": "Een exclusief stuk foie gras verpakt in een luxueuze gouden folie, wat wijst op premium kwaliteit.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Premium+Foie+Gras"
+    },
+    {
+      "id": 6,
+      "title": "Geselecteerde Rode Wijnen",
+      "src": "public/images/products/Redwinebottles.jpg",
+      "alt": "Twee flessen van een zorgvuldig geselecteerde rode wijn, ideaal in combinatie met foie gras.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Geselecteerde+Rode+Wijnen"
+    },
+    {
+      "id": 7,
+      "title": "Artisanale Olijfolie",
+      "src": "public/images/products/Virginoilveobottles.jpg",
+      "alt": "Twee flessen artisanale vierge olijfolie, een perfecte aanvulling voor culinaire gerechten.",
+      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Artisanale+Olijfolie"
     }
   ]
 }
