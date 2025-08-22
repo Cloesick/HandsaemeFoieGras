@@ -1,4 +1,3 @@
-<!-- This component contains the contact and visit information. -->
 <section id="contact" class="py-20 bg-white">
     <div class="container mx-auto px-6">
         <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-brand-dark-brown">Contact & Bezoek Ons</h1>
@@ -9,13 +8,16 @@
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">Ervaar de authentieke sfeer van onze boerderij en ontdek ons volledige assortiment. Wij staan klaar om u persoonlijk advies te geven.</p>
                 
                 <address class="space-y-4 text-lg not-italic">
-                    <p><strong>Adres:</strong> Groenestraat 50, 8610 Kortemark, België</p>
+                    <p><strong>Adres:</strong> <a href="https://maps.app.goo.gl/jiAxheT1EPE5sSAm9" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">Groenestraat 50, 8610 Kortemark, België</a></p>
+                    </iframe>
                     <p><strong>Telefoon:</strong> <a href="tel:051570372" class="text-brand-gold hover:underline">051 57 03 72</a></p>
                     <p><strong>Email:</strong> <a href="mailto:deprezjan@skynet.be" class="text-brand-gold hover:underline">deprezjan@skynet.be</a></p>
                     <div>
                         <h3 class="font-bold text-lg mb-2">Openingsuren:</h3>
                         <p>Dinsdag - Zaterdag: 09:00 - 19:30</p>
                         <p>Zon- en Maandag: Gesloten</p>
+                        
+                        <div id="opening-status" class="mt-2"></div>
                     </div>
                 </address>
 
@@ -26,16 +28,22 @@
             <div>
                  <iframe 
                     title="Locatie van Handsaeme Hoevewinkel op Google Maps"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.411135763071!2d3.033620815750807!3d51.00030017955513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcb512965f7c35%3A0x67aa242b78d91c14!2sGroenestraat%2050%2C%208610%20Kortemark!5e0!3m2!1sen!2sbe!4v1660845348721!5m2!1sen!2sbe" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2510.3848343494765!2d3.0036496768554373!3d51.0090389469874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcb51b49f5e65f%3A0x44cb3e9776661d2f!2sGroenestraat%2050%2C%208610%20Kortemark!5e0!3m2!1snl!2sbe!4v1755855292103!5m2!1snl!2sbe" 
                     width="100%" 
                     height="450" 
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade" 
+                    referrerpolicy="no-referrer-when-downgrade"
                     class="rounded-lg shadow-xl">
                 </iframe>
             </div>
         </div>
     </div>
+    <script src="public/assets/js/contact.js" defer></script>
+    <script src="public/assets/js/loader.js" defer></script>
+
+
 </section>
+
+

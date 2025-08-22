@@ -9,6 +9,6 @@
   "author": "Handsaeme Foie Gras",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.17"
   }
 }

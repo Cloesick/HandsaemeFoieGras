@@ -1,29 +1,101 @@
+/* ==========================================================================
+   1. Tailwind Directives - These must be at the top.
+   ========================================================================== */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-brand-cream text-brand-dark-brown antialiased;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
-  }
+/* ==========================================================================
+   2. Your Custom Styles - All your work goes below.
+   ========================================================================== */
+
+/* --- Header Styles --- */
+.header-background {
+    background-color: #3a3228;
+    color: #e0c9a6;
+}
+.nav-link-animated { 
+    position: relative; 
+    padding-bottom: 8px; 
+    text-decoration: none; 
+    color: rgba(224, 201, 166, 0.85); 
+    transition: color 0.3s ease; 
+    font-weight: 500; 
+    letter-spacing: 0.05em; 
+}
+.nav-link-animated:hover { 
+    color: #ffffff; 
+}
+.nav-link-animated::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 2px; 
+    background-color: #e0c9a6; 
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.4s ease; 
+}
+.nav-link-animated:hover::after { 
+    transform: scaleX(1); 
+}
+.lang-item {
+    position: relative;
+}
+.lang-flag {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.lang-item:hover .lang-flag {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+#mobile-menu {
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+#mobile-menu.is-open {
+    max-height: 300px;
+    opacity: 1;
 }
 
-@layer components {
-  .nav-link {
-    @apply pb-1 border-b-2 border-transparent text-brand-muted-brown transition-colors duration-300;
-  }
-  .nav-link:hover, .nav-link.active {
-    @apply text-brand-gold border-brand-gold;
-  }
-  .chart-container {
-    @apply relative w-full max-w-4xl mx-auto h-[350px] md:h-[450px] max-h-[60vh];
-  }
-  .hero-bg {
-    /* Remember to create an images folder and add a hero-background.jpg file */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/hero-background.jpg');
-    @apply bg-cover bg-center;
-  }
+/* --- Content Page Styles ('Onze Methode') --- */
+.prose-custom p {
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+.prose-custom h2 {
+    color: #e0c9a6; /* Replaced var(--brand-gold) for simplicity */
+    border-bottom: 2px solid rgba(224, 201, 166, 0.3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+/* --- Carousel Component Styles --- */
+.carousel-item {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.carousel-item.active {
+    display: block;
+    position: relative;
+}
+.carousel-link:hover h2 {
+    color: #B8860B;
 }

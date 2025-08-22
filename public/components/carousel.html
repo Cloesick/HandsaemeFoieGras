@@ -8,25 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Assuming a style.css file exists, otherwise this can be removed -->
-    <!-- <link rel="stylesheet" href="public/assets/css/style.css"> -->
-    <style>
-        /* Simple transition for the slides */
-        .carousel-item {
-            display: none;
-            transition: opacity 0.5s ease-in-out;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .carousel-item.active {
-            display: block;
-            position: relative; /* Changed from absolute to ensure container has height */
-        }
-        .carousel-link:hover h2 {
-            color: #B8860B; /* brand-gold color on hover */
-        }
-    </style>
 </head>
 <body class="bg-[#3a3228] text-[#e0c9a6]">
 
@@ -35,54 +16,42 @@
         <!-- You would typically load your header component here using a script -->
     </div>
 
-    <main class="py-20">
-        <div class="container mx-auto px-6">
+<main class="py-20">
+    <div class="container mx-auto px-6">
 
-            <!-- Grid container for side-by-side carousels -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-                <!-- Food Carousel Section (Dynamically Loaded) -->
-                <section id="food-carousel-section">
-                    <a href="index.html#products" class="carousel-link block group">
-                        <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300 font-serif">Delicatessen</h2>
-                        <div id="food-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
-                            <!-- Carousel Wrapper -->
-                            <div id="food-carousel-wrapper" class="relative h-96">
-                                <!-- Slides will be dynamically inserted here by carousel.js -->
+            <section id="food-carousel-section">
+                <a href="index.html#products" class="carousel-link block group">
+                    <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300 font-serif">Delicatessen</h2>
+                    <div id="food-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
+                        <div id="food-carousel-wrapper" class="relative h-96">
                             </div>
-                            <!-- Prev/Next Controls -->
-                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
-                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
-                        </div>
-                    </a>
-                </section>
+                        <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
+                        <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
+                    </div>
+                </a>
+            </section>
 
-                <!-- Venue Carousel Section (Dynamically Loaded) -->
-                <section id="venue-carousel-section">
-                    <a href="index.html#contact" class="carousel-link block group">
-                        <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300 font-serif">Hoeve</h2>
-                        <div id="venue-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
-                            <!-- Carousel Wrapper -->
-                            <div id="venue-carousel-wrapper" class="relative h-96">
-                                <!-- Slides will be dynamically inserted here by carousel.js -->
+            <section id="venue-carousel-section">
+                <a href="index.html#contact" class="carousel-link block group">
+                    <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300 font-serif">Hoeve</h2>
+                    <div id="venue-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
+                        <div id="venue-carousel-wrapper" class="relative h-96">
                             </div>
-                            <!-- Prev/Next Controls -->
-                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
-                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
-                        </div>
-                    </a>
-                </section>
+                        <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
+                        <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
+                    </div>
+                </a>
+            </section>
 
-            </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <!-- Placeholder for the footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Link to the external JavaScript file -->
-    <script src="public/assets/js/carousel.js" defer></script>
-    <!-- Assuming a loader.js file exists for header/footer loading -->
-    <!-- <script src="public/assets/js/loader.js" defer></script> -->
+<script src="public/assets/js/carousel.js" ></script>
+
 </body>
 </html>

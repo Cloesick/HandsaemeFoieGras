@@ -1,24 +1,20 @@
 {
   "production": [
     {
-      "src": "public/images/production/DriedMeat.jpg",
-      "alt": "Gedroogd vlees",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Gedroogd+Vlees"
+      "src": "public/images/production/Pate.jpg",
+      "alt": "Close-up van een vers bereide, ambachtelijke paté in een schaal."
     },
     {
-      "src": "public/images/production/DriedMeatHanging.jpg",
-      "alt": "Gedroogd vlees dat hangt te rijpen",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Rijpend+Vlees"
+      "src": "public/images/production/DriedMeathanging.jpg",
+      "alt": "Verschillende soorten worsten en vleeswaren hangen te rijpen in een speciale kamer."
     },
     {
-      "src": "public/images/production/MeatGrinder.jpg",
-      "alt": "Vleesmolen in productie",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Vleesmolen"
+      "src": "public/images/production/Wildboars.jpg",
+      "alt": "Wilde everzwijnen in hun bosrijke, natuurlijke leefomgeving."
     },
     {
-      "src": "public/images/production/WildBoars.jpg",
-      "alt": "Everzwijnen op de hoeve",
-      "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Everzwijnen"
+      "src": "public/images/production/Driedmeat.jpg",
+      "alt": "Een selectie van ambachtelijk gedroogd vlees, zorgvuldig gepresenteerd."
     }
   ]
 }

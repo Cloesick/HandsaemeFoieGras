@@ -1,112 +1,72 @@
-<!-- This is the final, unified header with a large icon, brand text, navigation, and language selector all in a single bar. -->
-<style>
-    /* Custom styles for the header, inspired by the logo's color palette */
-    .header-background {
-        background-color: #3a3228; /* Deep, rich brown from the example image */
-        color: #e0c9a6; /* Creamy gold from the logo's text */
-    }
-
-    .nav-link-animated {
-        position: relative;
-        padding-bottom: 8px;
-        text-decoration: none;
-        color: rgba(224, 201, 166, 0.85); /* Muted gold */
-        transition: color 0.3s ease;
-        font-weight: 500;
-        letter-spacing: 0.05em;
-    }
-
-    .nav-link-animated:hover {
-        color: #ffffff;
-    }
-
-    .nav-link-animated::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #e0c9a6; /* Gold accent */
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.4s ease;
-    }
-
-    .nav-link-animated:hover::after {
-        transform: scaleX(1);
-    }
+<header class="header-background shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/10 mb-16">
     
-    .lang-item {
-        position: relative;
-    }
+    <div class="hidden md:flex items-center justify-center gap-4 lg:gap-8 bg-black/20 text-gray-300 py-2 text-xs lg:text-sm">
+        <a href="https://www.google.com/maps7" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+            <span>Groenestraat 50, 8610 Kortemark</span>
+        </a>
+        <span class="text-white/20">|</span>
+        <a href="tel:051570372" class="flex items-center gap-2 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+            <span>051 57 03 72</span>
+        </a>
+        <span class="text-white/20">|</span>
+        <div id="top-bar-hours" class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6z" clip-rule="evenodd" /></svg>
+        </div>
+    </div>
 
-    .lang-flag {
-        position: absolute;
-        top: 100%; /* Position below the language selector */
-        left: 50%;
-        transform: translateX(-50%) translateY(10px);
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none;
-        border-radius: 2px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    .lang-item:hover .lang-flag {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-</style>
-
-<header class="header-background text-white shadow-lg sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
-    <div class="container mx-auto px-6">
-        <!-- The fixed height has been replaced with vertical padding 'py-4' for adaptive spacing -->
-        <!-- Added flex-wrap to allow items to wrap on smaller screens -->
-        <div class="flex items-center justify-between py-4 flex-wrap"> 
-
-            <!-- Left Side: Icon and Brand Text wrapped in a single link -->
-            <a href="index.html" class="flex items-center gap-5 group" aria-label="Home">
-                <!-- Large Icon -->
-                <img src="public/images/icons/SealColored3ALLGarlicOnionsHerbsLightBrownBG.png" alt="Handsaeme Foie Gras Logo" class="h-40 w-40 transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
-                
-                <!-- Brand Text (hiding classes removed) -->
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between py-2 relative">
+            
+            <a href="index.html" class="flex items-center gap-3 sm:gap-4 group transform translate-y-8 z-10" aria-label="Home">
+                <img src="public/images/icons/SealColored3ALLGarlicOnionsHerbsLightBrownBG.png" alt="Handsaeme Foie Gras Logo" class="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
                 <div>
-                    <h1 class="text-4xl font-bold font-serif leading-tight">Handsaeme Foie Gras</h1>
-                    <h3 class="text-xl font-bold font-serif leading-tight text-gray-300">Artisanale delicatessen uit West-Vlaanderen.</h3>
+                    <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold font-serif leading-tight">Handsaeme Foie Gras</h1>
+                    <h3 class="hidden sm:block text-base lg:text-xl font-serif leading-tight text-gray-300">Artisanale delicatessen</h3>
                 </div>
             </a>
-
-            <!-- Right Side: Navigation, Languages, and Mobile Menu -->
-            <div class="flex items-center gap-8 flex-wrap">
-                <!-- Center: Quick Links (hiding classes removed) -->
-                <nav class="flex items-center space-x-8 text-xl text-gray-50">
-                    <a href="#story" class="nav-link-animated font-serif leading-tight">ONS VERHAAL</a>
-                    <a href="#products" class="nav-link-animated font-serif leading-tight">PRODUCTEN</a>
-                    <a href="#method" class="nav-link-animated font-serif leading-tight">METHODE</a>
-                    <a href="#contact" class="nav-link-animated font-serif leading-tight">CONTACT</a>
-                </nav>
-
-                <!-- Language Selector (hiding classes removed) -->
-                <div id="language-selector" class="flex items-center space-x-4 text-sm border-l border-white/20 pl-8">
-                    <div class="lang-item">
-                        <button data-lang="nl" class="lang-button font-bold text-white">NL</button>
-                        <img src="https://flagcdn.com/w40/be.png" alt="Belgian Flag" class="lang-flag w-8">
-                    </div>
-                    <div class="lang-item">
-                        <button data-lang="fr" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">FR</button>
-                        <img src="https://flagcdn.com/w40/fr.png" alt="French Flag" class="lang-flag w-8">
-                    </div>
-                    <div class="lang-item">
-                        <button data-lang="en" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">EN</button>
-                        <img src="https://flagcdn.com/w40/gb.png" alt="British Flag" class="lang-flag w-8">
+            
+            <div class="hidden md:flex flex-1 justify-end">
+                <div class="flex items-center gap-6 lg:gap-8">
+                    <nav class="flex items-center gap-6 lg:gap-8 text-base">
+                        <a href="#products" class="nav-link-animated font-serif leading-tight">PRODUCTEN</a>
+                        <a href="#story" class="nav-link-animated font-serif leading-tight">ONS VERHAAL</a>
+                        <a href="#method" class="nav-link-animated font-serif leading-tight">METHODE</a>
+                        <a href="#contact" class="nav-link-animated font-serif leading-tight">CONTACT</a>
+                    </nav>
+                    <div id="header-status-desktop" class="text-sm font-semibold"></div>
+                    <div id="language-selector" class="flex items-center space-x-3 text-sm border-l border-white/20 pl-6 lg:pl-8">
+                        <div class="lang-item"><button data-lang="nl" class="lang-button font-bold text-white">NL</button><img src="https://flagcdn.com/w40/be.png" alt="Belgian Flag" class="lang-flag w-8"></div>
+                        <div class="lang-item"><button data-lang="fr" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">FR</button><img src="https://flagcdn.com/w40/fr.png" alt="French Flag" class="lang-flag w-8"></div>
+                        <div class="lang-item"><button data-lang="en" class="lang-button font-normal text-gray-400 hover:text-white transition-colors">EN</button><img src="https://flagcdn.com/w40/gb.png" alt="British Flag" class="lang-flag w-8"></div>
                     </div>
                 </div>
             </div>
 
+            <div class="md:hidden z-20">
+                <button id="mobile-menu-button" class="text-white p-2" aria-label="Open menu">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <nav class="flex flex-col items-center space-y-4 text-lg">
+                <a href="#story" class="nav-link-animated font-serif leading-tight">ONS VERHAAL</a>
+                <a href="#products" class="nav-link-animated font-serif leading-tight">PRODUCTEN</a>
+                <a href="#method" class="nav-link-animated font-serif leading-tight">METHODE</a>
+                <a href="#contact" class="nav-link-animated font-serif leading-tight">CONTACT</a>
+            </nav>
+            <div class="text-center mt-4 pt-4 border-t border-white/20">
+                <a href="tel:051570372" class="flex items-center justify-center gap-2 text-lg hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                    <span>Bel Nu: 051 57 03 72</span>
+                </a>
+            </div>
+            <div id="header-status-mobile" class="text-center mt-2 pt-2 font-semibold"></div>
         </div>
     </div>
 </header>
 
-<!-- This script tag will load the header's specific JavaScript -->
 <script src="public/assets/js/header.js" defer></script>

@@ -1,0 +1,3 @@
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2510.3848343494765!2d3.0036496768554373!3d51.0090389469874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcb51b49f5e65f%3A0x44cb3e9776661d2f!2sGroenestraat%2050%2C%208610%20Kortemark!5e0!3m2!1snl!2sbe!4v1755855292103!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2510.3848343494765!2d3.0036496768554373!3d51.0090389469874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcb51b49f5e65f%3A0x44cb3e9776661d2f!2sGroenestraat%2050%2C%208610%20Kortemark!5e0!3m2!1snl!2sbe!4v1755855292103!5m2!1snl!2sbe

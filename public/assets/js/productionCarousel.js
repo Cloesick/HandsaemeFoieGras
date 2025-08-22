@@ -1,4 +1,4 @@
-// UPDATED to wait for the 'componentsLoaded' event
+// This script contains the corrected main() function.
 (function() {
 
     document.addEventListener('componentsLoaded', () => {
@@ -62,7 +62,7 @@
                 currentIndex = (currentIndex + 1) % slides.length;
                 showSlide(currentIndex);
             }
-    
+            
             prevButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -79,7 +79,7 @@
             });
     
             function startAutoPlay() {
-                autoPlayInterval = setInterval(nextSlide, 3000);
+                autoPlayInterval = setInterval(nextSlide, 2000); 
             }
     
             showSlide(currentIndex);
@@ -87,19 +87,16 @@
         }
     
         async function main() {
-            const foodJsonPath = 'public/assets/data/food.json';
-            const locationJsonPath = 'public/assets/data/location.json';
+            // UPDATED: Corrected the filename
+            const productionJsonPath = 'public/assets/data/production.json';
+
+            // Simplified the fetch call
+            const productionData = await fetchData(productionJsonPath);
     
-            const [foodData, venueData] = await Promise.all([
-                fetchData(foodJsonPath),
-                fetchData(locationJsonPath)
-            ]);
+            // UPDATED: Corrected the data key from 'production.json' to 'production'
+            populateCarousel('production-carousel-wrapper', productionData, 'production');
     
-            populateCarousel('food-carousel-wrapper', foodData, 'food');
-            populateCarousel('venue-carousel-wrapper', venueData, 'locations');
-    
-            initializeCarousel('food-carousel');
-            initializeCarousel('venue-carousel');
+            initializeCarousel('production-carousel');
         }
     
         main();

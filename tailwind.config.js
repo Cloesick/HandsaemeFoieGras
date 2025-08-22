@@ -1,17 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"], // Scans all HTML and JS files in the public folder
+  content: [
+    "./*.html",
+    "./components/**/*.html"
+  ],
   theme: {
     extend: {
+      // ADD THIS 'colors' OBJECT
       colors: {
         'brand-cream': '#F9F6F2',
         'brand-dark-brown': '#3D2B1F',
-        'brand-muted-brown': '#6A554A',
-        'brand-gold': '#B8860B',
+        'brand-light-brown': '#4a4238',
+        'brand-gold': '#e0c9a6',
+        'brand-muted-brown': '#6a554a',
       },
+      // You can also extend other things like fonts
       fontFamily: {
-        'sans': ['Lato', 'sans-serif'],
         'serif': ['Playfair Display', 'serif'],
+        'sans': ['Lato', 'sans-serif'],
       },
     },
   },
