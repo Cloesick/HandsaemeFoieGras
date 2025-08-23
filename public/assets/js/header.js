@@ -28,7 +28,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu) {
             // Assumes you're using the 'is-open' class for animation
-            mobileMenu.classList.toggle('is-open'); 
+mobileMenu.classList.toggle('hidden');
+
         }
     }
 

@@ -1,0 +1,2 @@
+[console_scripts]
+optimize-images = image_optimizer.cli:main

@@ -1,0 +1,13 @@
+# pyproject.toml
+
+[project]
+name = "image-optimizer"
+version = "1.0.0"
+dependencies = [
+    "Pillow"
+]
+
+[project.scripts]
+# This line creates the global command.
+# "command-name = path.to.file:function_to_run"
+optimize-images = "image_optimizer.cli:main"

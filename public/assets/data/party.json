@@ -1,37 +1,37 @@
 {
   "party": [
     {
-      "src": "public/images/party/Charcuterie.jpg",
+      "src": "public/images/party/Charcuterie.webp",
       "alt": "Charcuterieschotel",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Charcuterie"
     },
     {
-      "src": "public/images/party/DinerTable.jpg",
+      "src": "public/images/party/DinerTable.webp",
       "alt": "Gedekte dinertafel",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Dinertafel"
     },
     {
-      "src": "public/images/party/Ofyr.jpg",
+      "src": "public/images/party/Ofyr.webp",
       "alt": "Gezellig samenzijn rond de Ofyr",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Ofyr"
     },
     {
-      "src": "public/images/party/OwnerF.jpg",
+      "src": "public/images/party/OwnerF.webp",
       "alt": "De eigenaar tijdens een evenement",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Eigenaar"
     },
     {
-      "src": "public/images/party/SalamiFoieGras.jpg",
+      "src": "public/images/party/SalamiFoieGras.webp",
       "alt": "Salami en foie gras",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Salami+%26+Foie+Gras"
     },
     {
-      "src": "public/images/party/WhiteWineTasting.png",
+      "src": "public/images/party/WhiteWineTasting.webp",
       "alt": "Wijnproeverij",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Wijnproeverij"
     },
     {
-      "src": "public/images/party/WildFire.jpg",
+      "src": "public/images/party/WildFire.webp",
       "alt": "Vuurkorf tijdens een evenement",
       "placeholder": "https://placehold.co/800x400/A97C50/FFFFFF?text=Vuurkorf"
     }

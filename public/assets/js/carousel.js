@@ -32,8 +32,7 @@
                     slide.classList.add('active');
                 }
                 const imagePath = item.src;
-                slide.innerHTML = `<img src="${imagePath}" onerror="this.onerror=null;this.src='https://placehold.co/800x400/3D2B1F/FFFFFF?text=${encodeURIComponent(item.alt)}';" alt="${item.alt}" class="w-full h-full object-cover">`;
-                wrapper.appendChild(slide);
+slide.innerHTML = `<img src="${imagePath}" onerror="..." alt="${item.alt}" class="w-full h-full object-cover" loading="lazy">`;                wrapper.appendChild(slide);
             });
         }
     

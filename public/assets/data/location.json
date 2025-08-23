@@ -2,62 +2,62 @@
   "locations": [
     {
       "id": 1,
-      "src": "public/images/location/EventLocationGlas.jpg",
+      "src": "public/images/location/EventLocationGlas.webp",
       "alt": "De glazen wand van de sfeervolle ontvangstruimte."
     },
     {
       "id": 2,
-      "src": "public/images/location/EventLocationOutdoors.png",
+      "src": "public/images/location/EventLocationOutdoors.webp",
       "alt": "Buitenaanzicht van de authentieke hoeve bij valavond."
     },
     {
       "id": 3,
-      "src": "public/images/location/EventLocationRoof.jpg",
+      "src": "public/images/location/EventLocationRoof.webp",
       "alt": "Een detail van de rustieke dakconstructie van de hoeve."
     },
     {
       "id": 4,
-      "src": "public/images/location/EventLocationTerrace.jpg",
+      "src": "public/images/location/EventLocationTerrace.webp",
       "alt": "Het ruime en zonnige terras, klaar voor een evenement."
     },
     {
       "id": 5,
-      "src": "public/images/party/OwnerF.jpg",
+      "src": "public/images/party/OwnerF.webp",
       "alt": "De eigenaar, trots poserend op het domein."
     },
     {
       "id": 6,
-      "src": "public/images/party/Ofyr.jpg",
+      "src": "public/images/party/Ofyr.webp",
       "alt": "De Ofyr vuurschaal, een centraal punt voor gezelligheid."
     },
     {
       "id": 7,
-      "src": "public/images/location/Landscapemist.jpg",
+      "src": "public/images/location/Landscapemist.webp",
       "alt": "Het omliggende landschap gehuld in ochtendmist."
     },
     {
       "id": 8,
-      "src": "public/images/location/Willos.jpg",
+      "src": "public/images/location/Willos.webp",
       "alt": "Willos, de hond van de hoeve, rustend in het gras."
     },
       {
       "id": 7,
-      "src": "public/images/party/Whitewinetasting.png",
+      "src": "public/images/party/Whitewinetasting.webp",
       "alt": "Het omliggende landschap gehuld in ochtendmist."
     },
       {
       "id": 7,
-      "src": "public/images/party/Dinertable.jpg",
+      "src": "public/images/party/Dinertable.webp",
       "alt": "Het omliggende landschap gehuld in ochtendmist."
     },
       {
       "id": 7,
-      "src": "public/images/party/Salamifoiegras.jpg",
+      "src": "public/images/party/Salamifoiegras.webp",
       "alt": "Het omliggende landschap gehuld in ochtendmist."
     },
       {
       "id": 7,
-      "src": "public/images/party/Bonfire.jpg",
+      "src": "public/images/party/Bonfire.webp",
       "alt": "Het omliggende landschap gehuld in ochtendmist."
     }
   ]

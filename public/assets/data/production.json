@@ -1,19 +1,19 @@
 {
   "production": [
     {
-      "src": "public/images/production/Pate.jpg",
+      "src": "public/images/production/Pate.webp",
       "alt": "Close-up van een vers bereide, ambachtelijke paté in een schaal."
     },
     {
-      "src": "public/images/production/DriedMeathanging.jpg",
+      "src": "public/images/production/DriedMeathanging.webp",
       "alt": "Verschillende soorten worsten en vleeswaren hangen te rijpen in een speciale kamer."
     },
     {
-      "src": "public/images/production/Wildboars.jpg",
+      "src": "public/images/production/Wildboars.webp",
       "alt": "Wilde everzwijnen in hun bosrijke, natuurlijke leefomgeving."
     },
     {
-      "src": "public/images/production/Driedmeat.jpg",
+      "src": "public/images/production/Driedmeat.webp",
       "alt": "Een selectie van ambachtelijk gedroogd vlees, zorgvuldig gepresenteerd."
     }
   ]
