@@ -1,25 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // This 'content' array is now specifically tailored to your folder structure.
   content: [
-    "./*.html",
-    "./components/**/*.html"
+      './index.html',
+    './components/**/*.html', // Scans all HTML files in the components folder
+    './src/**/*.js',          // Scans all JS files in the src folder
   ],
+
   theme: {
     extend: {
-      // ADD THIS 'colors' OBJECT
+      // Your vibrant and earthy color palette
       colors: {
-        'brand-cream': '#F9F6F2',
-        'brand-dark-brown': '#3D2B1F',
-        'brand-light-brown': '#4a4238',
-        'brand-gold': '#e0c9a6',
-        'brand-muted-brown': '#6a554a',
+        'parchment': '#FDFBF5',
+        'vibrant-orange': '#FF7D00',
+        'forest-green': '#28502E',
+        'coffee-brown': '#432818',
+        'earthy-olive': '#A6A15E',
+        'lime-green': '#85CB33',
       },
-      // You can also extend other things like fonts
+      // Your chosen artisanal font pairing
       fontFamily: {
-        'serif': ['Playfair Display', 'serif'],
         'sans': ['Lato', 'sans-serif'],
-      },
+        'serif': ['Playfair Display', 'serif'],
+      }
     },
   },
+
   plugins: [],
 }

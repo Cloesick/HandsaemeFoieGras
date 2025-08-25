@@ -4,43 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onze Methode - Handsaeme Foie Gras</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="/dist/output.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
-<body class="antialiased">
 
+<body class="bg-parchment text-coffee-brown antialiased">
+
+<header id="header-placeholder"></header>
 
 <main>
     <div class="container mx-auto px-6 py-16 md:py-24">
         <div class="text-center mb-12 md:mb-16">
-            <h1 class="text-5xl md:text-6xl font-bold">Onze Methode</h1>
-            <p class="text-xl text-gray-400 mt-2">Een erfenis van traditie en kwaliteit.</p>
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-forest-green">Onze Methode</h1>
+            <p class="text-xl text-earthy-olive mt-2">Een erfenis van traditie en kwaliteit.</p>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            
             <div>
-                <div class="bg-brand-light-brown p-8 md:p-12 rounded-lg shadow-2xl prose-custom h-full">
-                    <h2 class="text-3xl md:text-4xl font-bold">Een Toewijding aan Traditie</h2>
-                    <p class="text-lg text-gray-300">
+                <div class="bg-coffee-brown text-parchment/90 p-8 md:p-12 rounded-lg shadow-xl prose-custom h-full">
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold text-parchment">Een Toewijding aan Traditie</h2>
+                    <p class="text-lg">
                         Vanaf het begin heeft het bedrijf zich gepositioneerd als een beoefenaar van traditionele methoden...
                     </p>
-                    <h2 class="text-3xl md:text-4xl font-bold">De Hoeve als Verticaal Geïntegreerde Hub</h2>
-                    <p class="text-lg text-gray-300">
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold text-parchment">De Hoeve als Verticaal Geïntegreerde Hub</h2>
+                    <p class="text-lg">
                         Handsaeme Foie-gras beheert bijna elk aspect van de productieketen ter plaatse...
                     </p>
                 </div>
             </div>
+
             <div>
                 <section id="production-carousel-section">
                     <a href="index.html#method" class="carousel-link block group">
-                        <h2 class="text-4xl font-bold text-center mb-8 transition-colors duration-300 font-serif">Productie</h2>
-                        <div id="production-carousel" class="relative w-full mx-auto shadow-xl rounded-lg overflow-hidden">
+                        
+                        <h2 class="font-serif text-4xl font-bold text-center text-forest-green group-hover:text-vibrant-orange mb-8 transition-colors duration-300">
+                            Productie
+                        </h2>
+                        
+                        <div id="production-carousel" class="relative w-full mx-auto shadow-lg rounded-lg overflow-hidden">
                             <div id="production-carousel-wrapper" class="relative h-96">
                                 </div>
-                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">‹</button>
-                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-colors z-10">›</button>
+                            
+                            <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-coffee-brown/40 hover:bg-coffee-brown/70 text-parchment p-3 rounded-full transition-colors z-10">‹</button>
+                            <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-coffee-brown/40 hover:bg-coffee-brown/70 text-parchment p-3 rounded-full transition-colors z-10">›</button>
                         </div>
                     </a>
                 </section>
@@ -49,9 +62,11 @@
     </div>
 </main>
 
-<script src="public/assets/js/productionCarousel.js" defer></script>
-    <script src="public/assets/js/loader.js" defer></script>
-    <script src="public/assets/js/main.js" defer></script>
+<footer id="footer-placeholder"></footer>
+
+<script src="/js/productionCarousel.js" defer></script>
+<script src="/js/loader.js" defer></script>
+<script src="/js/main.js" defer></script>
+
 </body>
 </html>
-

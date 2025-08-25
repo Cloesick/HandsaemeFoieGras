@@ -1,101 +1,109 @@
 /* ==========================================================================
-   1. Tailwind Directives - These must be at the top.
+   1. Tailwind Directives & Font Imports
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ==========================================================================
-   2. Your Custom Styles - All your work goes below.
+   2. Global Base Styles
    ========================================================================== */
+@layer base {
+  body {
+    /* Sets the default background and text color for the whole site from your theme */
+    @apply bg-parchment text-coffee-brown font-sans antialiased;
+  }
 
-/* --- Header Styles --- */
-.header-background {
-    background-color: #3a3228;
-    color: #e0c9a6;
+  h1, h2, h3, h4, h5, h6 {
+    /* Sets the default heading font and color from your theme */
+    @apply font-serif text-forest-green;
+  }
 }
-.nav-link-animated { 
-    position: relative; 
-    padding-bottom: 8px; 
-    text-decoration: none; 
-    color: rgba(224, 201, 166, 0.85); 
-    transition: color 0.3s ease; 
-    font-weight: 500; 
-    letter-spacing: 0.05em; 
-}
-.nav-link-animated:hover { 
-    color: #ffffff; 
-}
-.nav-link-animated::after { 
-    content: ''; 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 2px; 
-    background-color: #e0c9a6; 
-    transform: scaleX(0); 
-    transform-origin: center; 
-    transition: transform 0.4s ease; 
-}
-.nav-link-animated:hover::after { 
-    transform: scaleX(1); 
-}
-.lang-item {
-    position: relative;
-}
-.lang-flag {
-    position: absolute;
-    top: 100%;
-    left: 50%;
+
+/* ==========================================================================
+   3. Custom Components & Styles
+   ========================================================================== */
+@layer components {
+  /* --- Header Styles --- */
+  .header-background {
+    /* Uses colors from your tailwind.config.js */
+    background-color: theme('colors.coffee-brown');
+    color: theme('colors.earthy-olive');
+  }
+
+  .nav-link-animated {
+    /* Applied theme colors and Tailwind utilities */
+    @apply relative pb-2 font-medium tracking-wider transition-colors duration-300;
+    color: theme('colors.earthy-olive/85'); /* Using theme color with opacity */
+  }
+
+  .nav-link-animated:hover {
+    /* Uses parchment for a warm, off-white hover effect */
+    color: theme('colors.parchment');
+  }
+
+  .nav-link-animated::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] transition-transform duration-300 ease-out;
+    background-color: theme('colors.earthy-olive'); /* Themed underline */
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+
+  .nav-link-animated:hover::after {
+    transform: scaleX(1);
+  }
+
+  .lang-item {
+    @apply relative;
+  }
+
+  .lang-flag {
+    @apply absolute top-full left-1/2 opacity-0 shadow-lg rounded-sm;
     transform: translateX(-50%) translateY(10px);
-    opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
-    border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.lang-item:hover .lang-flag {
+  }
+
+  .lang-item:hover .lang-flag {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-}
-#mobile-menu {
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    overflow: hidden;
+  }
+
+  #mobile-menu {
+    @apply overflow-hidden transition-all duration-300 ease-in-out;
     max-height: 0;
     opacity: 0;
-}
-#mobile-menu.is-open {
+  }
+
+  #mobile-menu.is-open {
     max-height: 300px;
     opacity: 1;
-}
+  }
 
-/* --- Content Page Styles ('Onze Methode') --- */
-.prose-custom p {
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-}
-.prose-custom h2 {
-    color: #e0c9a6; /* Replaced var(--brand-gold) for simplicity */
-    border-bottom: 2px solid rgba(224, 201, 166, 0.3);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    margin-top: 2.5rem;
-}
+  /* --- Content Page Styles ('Onze Methode') --- */
+  .prose-custom p {
+    @apply leading-loose mb-6;
+  }
 
-/* --- Carousel Component Styles --- */
-.carousel-item {
-    display: none;
-    transition: opacity 0.5s ease-in-out;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.carousel-item.active {
-    display: block;
-    position: relative;
-}
-.carousel-link:hover h2 {
-    color: #B8860B;
+  .prose-custom h2 {
+    /* Fully themed using Tailwind utilities */
+    @apply text-earthy-olive border-b-2 border-earthy-olive/30 pb-2 mb-6 mt-10;
+  }
+
+  /* --- Carousel Component Styles --- */
+  .carousel-item {
+    @apply absolute hidden w-full h-full transition-opacity duration-500 ease-in-out;
+  }
+
+  .carousel-item.active {
+    @apply relative block;
+  }
+
+  .carousel-link:hover h2 {
+    /* Uses the primary accent color from your theme */
+    color: theme('colors.vibrant-orange');
+  }
 }

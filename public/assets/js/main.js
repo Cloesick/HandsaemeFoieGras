@@ -30,17 +30,74 @@ function initializeProductSection() {
         addFilterEventListeners();
     }
 
+    // UPDATED FUNCTION: Now creates both type and keyword filter buttons
     function createFilterButtons() {
+        // 1. Get the existing type-based filters
         const types = ['all', ...new Set(allProducts.map(p => p.type))];
-        productFilters.innerHTML = types.map(type => `
+        
+        // 2. Define your new keyword-based filters
+        const keywordFilters = [
+            { label: 'Paté', filterValue: 'pate' }, // We'll search for 'pat' or 'paté'
+            { label: 'Lever', filterValue: 'lever' },
+            { label: 'Borst', filterValue: 'borst' },
+            { label: 'Rillette', filterValue: 'rillette' },
+               { label: 'Foie Gras', filterValue: 'foiegras' },
+    { label: 'Gekonfijt', filterValue: 'gekonfijt' },
+    { label: 'Met Truffel', filterValue: 'truffel' },
+    { label: 'Vers & Cru', filterValue: 'versecru' },
+    { label: 'Worst', filterValue: 'worst' }
+        ];
+
+        // 3. Generate HTML for type buttons
+        const typeButtonsHTML = types.map(type => `
             <button class="filter-btn px-4 py-2 rounded-full shadow transition-colors duration-300 ${type === 'all' ? 'bg-brand-gold text-white' : 'bg-white text-brand-gold'}" data-filter="${type}">
                 ${type.charAt(0).toUpperCase() + type.slice(1)}
             </button>
         `).join('');
+
+        // 4. Generate HTML for keyword buttons
+        const keywordButtonsHTML = keywordFilters.map(filter => `
+            <button class="filter-btn px-4 py-2 rounded-full shadow transition-colors duration-300 bg-white text-brand-gold" data-filter="${filter.filterValue}">
+                ${filter.label}
+            </button>
+        `).join('');
+
+        // 5. Combine and render all buttons
+        productFilters.innerHTML = typeButtonsHTML + keywordButtonsHTML;
     }
     
+    // UPDATED FUNCTION: Now handles both type and keyword filtering logic
     function renderProducts(filter = 'all') {
-        const filteredProducts = filter === 'all' ? allProducts : allProducts.filter(p => p.type === filter);
+        let filteredProducts;
+        const knownTypes = [...new Set(allProducts.map(p => p.type))]; // Get a list of valid types
+
+        // Check if the filter is 'all' or a known product type
+        if (filter === 'all') {
+            filteredProducts = allProducts;
+        } else if (knownTypes.includes(filter)) {
+            filteredProducts = allProducts.filter(p => p.type === filter);
+        } else {
+            // Otherwise, treat it as a keyword search on the product name
+            const searchTerm = filter.toLowerCase();
+            switch (searchTerm) {
+                case 'pate':
+                    // Special case for "pat" or "paté"
+                    filteredProducts = allProducts.filter(p => 
+                        p.name.toLowerCase().includes('pat') || 
+                        p.name.toLowerCase().includes('paté')
+                    );
+                    break;
+                case 'rillette': 
+                     // Handle the typo in the original request ("rillete")
+                    filteredProducts = allProducts.filter(p => p.name.toLowerCase().includes('rillette'));
+                    break;
+                default:
+                    // Default case for other keywords like 'lever', 'borst'
+                    filteredProducts = allProducts.filter(p => p.name.toLowerCase().includes(searchTerm));
+                    break;
+            }
+        }
+        
         productGrid.innerHTML = filteredProducts.map(product => {
             const pricePerKg = product.price_per_kg ? product.price_per_kg.toFixed(2) : ((product.price / product.weight) * 1000).toFixed(2);
             return `
@@ -57,14 +114,20 @@ function initializeProductSection() {
         updateChart(filteredProducts);
     }
     
+    // This function doesn't need changes, as it just passes the 'data-filter' value
     function addFilterEventListeners() {
         const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('bg-brand-gold', 'text-white'));
-                filterBtns.forEach(b => b.classList.add('bg-white', 'text-brand-gold'));
+                // Update active button styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-white');
+                    b.classList.add('bg-white', 'text-brand-gold');
+                });
                 btn.classList.add('bg-brand-gold', 'text-white');
-                btn.classList.remove('bg-white');
+                btn.classList.remove('bg-white', 'text-brand-gold');
+
+                // Call renderProducts with the filter value from the clicked button
                 renderProducts(btn.dataset.filter);
             });
         });

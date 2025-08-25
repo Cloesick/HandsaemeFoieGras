@@ -4,7 +4,9 @@
   "description": "Website for Handsaeme Foie Gras, artisanal delicatessen from Kortemark.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/style.css --watch"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/style.css --watch",
+  "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+
   },
   "author": "Handsaeme Foie Gras",
   "license": "ISC",
